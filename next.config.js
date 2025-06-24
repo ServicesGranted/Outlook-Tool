@@ -1,16 +1,9 @@
-const path = require('path');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: process.env.NEXT_DIST_DIR || '.next',
-  output: process.env.NEXT_OUTPUT_MODE,
-  outputFileTracingRoot: path.join(__dirname, '../'),
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
+  // keep these if you still want to ignore lint errors on deploy
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: false },
+  // if you don’t need Next’s image optimization you can leave this, otherwise remove it
   images: { unoptimized: true },
 };
 
